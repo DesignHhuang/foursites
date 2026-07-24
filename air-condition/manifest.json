@@ -1,0 +1,60 @@
+{
+  "source": "https://air-condition.pages.dev/",
+  "generatedAt": "2026-07-24T07:40:32.325Z",
+  "files": [
+    {
+      "path": "css/style.css",
+      "url": "https://air-condition.pages.dev/css/style.css",
+      "contentType": "text/css; charset=utf-8",
+      "bytes": 10669
+    },
+    {
+      "path": "index.html",
+      "url": "https://air-condition.pages.dev/",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 4781
+    },
+    {
+      "path": "js/app.js",
+      "url": "https://air-condition.pages.dev/js/app.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 40457
+    },
+    {
+      "path": "js/model.js",
+      "url": "https://air-condition.pages.dev/js/model.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 51871
+    },
+    {
+      "path": "vendor/OrbitControls.js",
+      "url": "https://air-condition.pages.dev/vendor/OrbitControls.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 38781
+    },
+    {
+      "path": "vendor/RoomEnvironment.js",
+      "url": "https://air-condition.pages.dev/vendor/RoomEnvironment.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 4933
+    },
+    {
+      "path": "vendor/RoundedBoxGeometry.js",
+      "url": "https://air-condition.pages.dev/vendor/RoundedBoxGeometry.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 6476
+    },
+    {
+      "path": "vendor/three.core.js",
+      "url": "https://air-condition.pages.dev/vendor/three.core.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 1408569
+    },
+    {
+      "path": "vendor/three.module.js",
+      "url": "https://air-condition.pages.dev/vendor/three.module.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 631039
+    }
+  ]
+}

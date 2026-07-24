@@ -1,0 +1,66 @@
+{
+  "source": "https://domino-pitch.pages.dev/",
+  "generatedAt": "2026-07-24T07:42:14.944Z",
+  "files": [
+    {
+      "path": "css/style.css",
+      "url": "https://domino-pitch.pages.dev/css/style.css",
+      "contentType": "text/css; charset=utf-8",
+      "bytes": 10672
+    },
+    {
+      "path": "index.html",
+      "url": "https://domino-pitch.pages.dev/",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 3425
+    },
+    {
+      "path": "js/app.js",
+      "url": "https://domino-pitch.pages.dev/js/app.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 22793
+    },
+    {
+      "path": "js/course.js",
+      "url": "https://domino-pitch.pages.dev/js/course.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 16087
+    },
+    {
+      "path": "vendor/OrbitControls.js",
+      "url": "https://domino-pitch.pages.dev/vendor/OrbitControls.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 38781
+    },
+    {
+      "path": "vendor/rapier.mjs",
+      "url": "https://domino-pitch.pages.dev/vendor/rapier.mjs",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 2059628
+    },
+    {
+      "path": "vendor/RoomEnvironment.js",
+      "url": "https://domino-pitch.pages.dev/vendor/RoomEnvironment.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 4933
+    },
+    {
+      "path": "vendor/RoundedBoxGeometry.js",
+      "url": "https://domino-pitch.pages.dev/vendor/RoundedBoxGeometry.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 6476
+    },
+    {
+      "path": "vendor/three.core.js",
+      "url": "https://domino-pitch.pages.dev/vendor/three.core.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 1408569
+    },
+    {
+      "path": "vendor/three.module.js",
+      "url": "https://domino-pitch.pages.dev/vendor/three.module.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 631039
+    }
+  ]
+}

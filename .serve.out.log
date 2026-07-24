@@ -1,0 +1,4 @@
+air-condition: http://127.0.0.1:4173/
+oled-tv: http://127.0.0.1:4174/
+wn5-console: http://127.0.0.1:4175/
+domino-pitch: http://127.0.0.1:4176/

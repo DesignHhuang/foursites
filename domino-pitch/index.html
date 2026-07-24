@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>多米诺球场 · 足球场级巨型骨牌物理模拟 | Domino Pitch</title>
+<link rel="stylesheet" href="./css/style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.js" } }
+</script>
+</head>
+<body>
+<div id="app">
+
+  <aside id="panel">
+    <header id="brand">
+      <h1>多米诺球场<i class="tm">™</i><em>DOMINO PITCH</em></h1>
+      <p class="sub">FIELD-105 · 标准球场 105 × 68 m · Rapier 刚体物理</p>
+      <div class="chips">
+        <span>巨牌 2.2 m 高</span><span id="chipCount">— 张</span><span>路线 ≈ 1.1 km</span>
+        <span>登阶 · 天桥 · 跳水</span><span>16×11 骨牌大阵</span><span>中圈螺旋 + 叠塔</span>
+      </div>
+    </header>
+    <div class="tape"></div>
+
+    <section>
+      <h2><i>◆ I</i>触发 · TRIGGER</h2>
+      <div class="row btns">
+        <button id="btnGo" class="primary" style="font-size:14px;padding:12px">🫳 推倒第一张</button>
+      </div>
+      <div class="row btns">
+        <button id="btnMulti">⚡ 多点齐推</button>
+        <button id="btnReset">↺ 重新码牌</button>
+      </div>
+      <div class="row seg" id="speedSeg">
+        <span class="lbl">时间流速</span>
+        <button data-s="0.5">½×</button>
+        <button data-s="1" class="on">1×</button>
+        <button data-s="2">2×</button>
+        <button data-s="4">4×</button>
+        <button data-s="8">8×</button>
+      </div>
+      <div class="nowBuilding" id="hintLine">提示:3D 里点击任意骨牌可手动推倒</div>
+    </section>
+
+    <section>
+      <h2><i>◆ II</i>镜头 · CAMERA</h2>
+      <label class="toggle"><span>跟随倒下的浪头</span><input type="checkbox" id="tglFollow" checked><i></i></label>
+      <div class="row btns">
+        <button id="vHero">全景</button>
+        <button id="vStart">起点</button>
+        <button id="vSpiral">中圈</button>
+        <button id="vBridge">天桥</button>
+        <button id="vGoal">球门</button>
+      </div>
+      <label class="toggle"><span>自动环绕</span><input type="checkbox" id="tglOrbit"><i></i></label>
+    </section>
+
+    <section>
+      <h2><i>◆ III</i>环境 · VIEW</h2>
+      <label class="toggle"><span>夜场灯光</span><input type="checkbox" id="tglNight"><i></i></label>
+      <div class="row seg" id="schemeSeg">
+        <span class="lbl">骨牌配色</span>
+        <button data-c="rainbow" class="on">彩虹</button>
+        <button data-c="redwhite">红白</button>
+        <button data-c="tealgold">青金</button>
+      </div>
+    </section>
+
+    <section>
+      <h2><i>◆ IV</i>实况 · LIVE</h2>
+      <div class="runStat" id="liveStat">尚未触发 · 全部站立</div>
+    </section>
+
+    <section>
+      <h2><i>◆ V</i>路线 · COURSE<b id="segCount"></b></h2>
+      <ol id="segList"></ol>
+    </section>
+
+    <footer>
+      拖动旋转 · 滚轮缩放 · 右键平移 · 点击骨牌手动推倒<br>
+      three.js + Rapier(WASM)· 真实刚体物理 · 无外部素材
+    </footer>
+  </aside>
+
+  <main id="stage">
+    <svg id="leaders"></svg>
+    <div id="tags"></div>
+    <div id="phaseToast"></div>
+    <div id="hint">点击「推倒第一张」开始连锁反应</div>
+  </main>
+
+</div>
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>极夜 · OLED 电视装配与爆炸图 | OLED TV Teardown</title>
+<link rel="stylesheet" href="./css/style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.js" } }
+</script>
+</head>
+<body>
+<div id="app">
+
+  <aside id="panel">
+    <header id="brand">
+      <h1>极夜<i class="tm">™</i><em>POLAR NIGHT</em></h1>
+      <p class="sub">OLED65X9 · 65″ 4K OLED · 客厅影院</p>
+      <div class="chips">
+        <span>65 英寸</span><span>4K · 120 Hz</span><span>OLED 自发光</span>
+        <span>峰值 1000 nit</span><span>ΔE &lt; 1</span><span>HDMI 2.1 ×4</span>
+      </div>
+    </header>
+    <div class="tape"></div>
+
+    <section>
+      <h2><i>◆ I</i>装配 · ASSEMBLY</h2>
+      <div class="row slider-row">
+        <input type="range" id="asmSlider" min="0" max="1000" value="0">
+        <output id="asmPct">0%</output>
+      </div>
+      <div class="row btns">
+        <button id="btnPlay" class="primary">▶ 开始组装</button>
+        <button id="btnReset">↺ 重来</button>
+      </div>
+      <div class="row seg" id="speedSeg">
+        <span class="lbl">速度</span>
+        <button data-s="0.5">×0.5</button>
+        <button data-s="1" class="on">×1</button>
+        <button data-s="2">×2</button>
+        <button data-s="4">×4</button>
+      </div>
+      <label class="toggle"><span>镜头跟随装配</span><input type="checkbox" id="tglFollow" checked><i></i></label>
+      <div class="nowBuilding" id="nowBuilding">尚未开始 · 21 件零件待装</div>
+    </section>
+
+    <section>
+      <h2><i>◆ II</i>爆炸图 · EXPLODED VIEW</h2>
+      <div class="row slider-row">
+        <input type="range" id="expSlider" min="0" max="1000" value="0">
+        <output id="expPct">0%</output>
+      </div>
+      <div class="row btns">
+        <button id="btnExplode" class="primary">一键爆炸 Explode</button>
+        <button id="btnCollapse">收拢复原</button>
+      </div>
+      <label class="toggle"><span>零件标签 Part tags</span><input type="checkbox" id="tglTags" checked><i></i></label>
+    </section>
+
+    <section>
+      <h2><i>◆ III</i>视图 · 环境 VIEW</h2>
+      <label class="toggle"><span>拆开后壳(剖视)</span><input type="checkbox" id="tglCutaway"><i></i></label>
+      <label class="toggle"><span>隐藏家具</span><input type="checkbox" id="tglFurniture"><i></i></label>
+      <label class="toggle"><span>夜晚</span><input type="checkbox" id="tglNight"><i></i></label>
+      <label class="toggle"><span>窗外下雨</span><input type="checkbox" id="tglRain"><i></i></label>
+      <label class="toggle"><span>自动环绕</span><input type="checkbox" id="tglOrbit"><i></i></label>
+      <div class="row btns"><button id="btnCam">⌖ 重置视角</button></div>
+    </section>
+
+    <section>
+      <h2><i>◆ IV</i>观影 · WATCH MODE</h2>
+      <button id="btnPower" class="power">⏻ 开机观影</button>
+      <div id="runPanel" class="hidden">
+        <div class="row seg" id="sourceSeg">
+          <span class="lbl">信号源</span>
+          <button data-m="demo" class="on">极光演示</button>
+          <button data-m="bars">检测彩条</button>
+          <button data-m="game">游戏主机</button>
+        </div>
+        <div class="row temp">
+          <span class="lbl">音量</span>
+          <button id="tDown">−</button><output id="tOut">12</output><button id="tUp">＋</button>
+        </div>
+        <label class="toggle"><span>律动氛围灯</span><input type="checkbox" id="tglBias" checked><i></i></label>
+        <div class="runStat" id="runStat"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2><i>◆ V</i>零件档案 · PART DOSSIERS<b id="partCount"></b></h2>
+      <ol id="partList"></ol>
+    </section>
+
+    <footer>
+      拖动旋转 · 滚轮缩放 · 右键平移 · 双击零件看档案<br>
+      以 three.js 逐件手工建模 · 无外部素材
+    </footer>
+  </aside>
+
+  <main id="stage">
+    <svg id="leaders"></svg>
+    <div id="tags"></div>
+    <div id="phaseToast"></div>
+    <div id="hint">拖动旋转 · 滚轮缩放 · 双击零件查看档案</div>
+
+    <div id="dossier" class="hidden">
+      <header>
+        <span class="num" id="dNum"></span>
+        <div class="t"><b id="dTitle"></b><i id="dEn"></i></div>
+        <button id="dClose">×</button>
+      </header>
+      <p id="dBlurb"></p>
+      <div id="dSpec" class="chips"></div>
+      <div class="dNav">
+        <button id="dPrev">‹ 上一件</button>
+        <span id="dIdx"></span>
+        <button id="dNext">下一件 ›</button>
+      </div>
+    </div>
+  </main>
+
+</div>
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

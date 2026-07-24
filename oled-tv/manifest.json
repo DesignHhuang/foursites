@@ -1,0 +1,72 @@
+{
+  "source": "https://oled-tv.pages.dev/",
+  "generatedAt": "2026-07-24T07:41:03.960Z",
+  "files": [
+    {
+      "path": "css/style.css",
+      "url": "https://oled-tv.pages.dev/css/style.css",
+      "contentType": "text/css; charset=utf-8",
+      "bytes": 10672
+    },
+    {
+      "path": "index.html",
+      "url": "https://oled-tv.pages.dev/",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 4819
+    },
+    {
+      "path": "js/app.js",
+      "url": "https://oled-tv.pages.dev/js/app.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 35783
+    },
+    {
+      "path": "js/model.js",
+      "url": "https://oled-tv.pages.dev/js/model.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 43393
+    },
+    {
+      "path": "vendor/OrbitControls.js",
+      "url": "https://oled-tv.pages.dev/vendor/OrbitControls.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 38781
+    },
+    {
+      "path": "vendor/RectAreaLightTexturesLib.js",
+      "url": "https://oled-tv.pages.dev/vendor/RectAreaLightTexturesLib.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 314764
+    },
+    {
+      "path": "vendor/RectAreaLightUniformsLib.js",
+      "url": "https://oled-tv.pages.dev/vendor/RectAreaLightUniformsLib.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 1014
+    },
+    {
+      "path": "vendor/RoomEnvironment.js",
+      "url": "https://oled-tv.pages.dev/vendor/RoomEnvironment.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 4933
+    },
+    {
+      "path": "vendor/RoundedBoxGeometry.js",
+      "url": "https://oled-tv.pages.dev/vendor/RoundedBoxGeometry.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 6476
+    },
+    {
+      "path": "vendor/three.core.js",
+      "url": "https://oled-tv.pages.dev/vendor/three.core.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 1408569
+    },
+    {
+      "path": "vendor/three.module.js",
+      "url": "https://oled-tv.pages.dev/vendor/three.module.js",
+      "contentType": "text/javascript; charset=utf-8",
+      "bytes": 631039
+    }
+  ]
+}
