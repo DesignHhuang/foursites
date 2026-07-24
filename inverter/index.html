@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WATTSONIC WattMatic AIO Home · 装配与爆炸图 | Teardown</title>
+<link rel="stylesheet" href="./css/style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.js" } }
+</script>
+</head>
+<body>
+<div id="app">
+  <aside id="panel">
+    <header id="brand">
+      <h1>WattMatic<i class="tm">™</i><em>AIO HOME</em></h1>
+      <p class="sub">Wattsonic · 全屋备电 · 一体式混合储能系统</p>
+      <div class="chips">
+        <span>最高 25 kW</span><span>最高 34.5 kWh</span><span>&lt;20 ms 备电切换</span>
+        <span>10 年 / 8000 次</span><span>IP65 户外级</span><span>-20 ℃ 到 55 ℃</span>
+      </div>
+    </header>
+    <div class="tape"></div>
+
+    <section>
+      <h2><i>◆ I</i>装配 · ASSEMBLY</h2>
+      <div class="row slider-row">
+        <input type="range" id="asmSlider" min="0" max="1000" value="0">
+        <output id="asmPct">0%</output>
+      </div>
+      <div class="row btns">
+        <button id="btnPlay" class="primary">▶ 开始组装</button>
+        <button id="btnReset">↺ 重来</button>
+      </div>
+      <div class="row seg" id="speedSeg">
+        <span class="lbl">速度</span>
+        <button data-s="0.5">×0.5</button>
+        <button data-s="1" class="on">×1</button>
+        <button data-s="2">×2</button>
+        <button data-s="4">×4</button>
+      </div>
+      <label class="toggle"><span>镜头跟随装配</span><input type="checkbox" id="tglFollow" checked><i></i></label>
+      <div class="nowBuilding" id="nowBuilding">尚未开始 · 17 件零件待装</div>
+    </section>
+
+    <section>
+      <h2><i>◆ II</i>爆炸图 · EXPLODED VIEW</h2>
+      <div class="row slider-row">
+        <input type="range" id="expSlider" min="0" max="1000" value="0">
+        <output id="expPct">0%</output>
+      </div>
+      <div class="row btns">
+        <button id="btnExplode" class="primary">一键爆炸 Explode</button>
+        <button id="btnCollapse">收拢复原</button>
+      </div>
+      <label class="toggle"><span>零件标签 Part tags</span><input type="checkbox" id="tglTags"><i></i></label>
+    </section>
+
+    <section>
+      <h2><i>◆ III</i>视图 · 环境 VIEW</h2>
+      <label class="toggle"><span>剖视(打开外壳)</span><input type="checkbox" id="tglCutaway"><i></i></label>
+      <label class="toggle"><span>隐藏电池塔外壳</span><input type="checkbox" id="tglBattery"><i></i></label>
+      <label class="toggle"><span>夜间机房</span><input type="checkbox" id="tglNight"><i></i></label>
+      <label class="toggle"><span>能量流动画</span><input type="checkbox" id="tglFlow" checked><i></i></label>
+      <label class="toggle"><span>自动环绕</span><input type="checkbox" id="tglOrbit"><i></i></label>
+      <div class="row btns">
+        <button id="btnCam">⌖ 重置视角</button>
+      </div>
+    </section>
+
+    <section>
+      <h2><i>◆ IV</i>运行 · RUN MODE</h2>
+      <button id="btnPower" class="power">⏻ 启动 WattMatic</button>
+      <div id="runPanel" class="hidden">
+        <div class="row seg" id="modeSeg">
+          <span class="lbl">模式</span>
+          <button data-m="tariff" class="on">AI 电价</button>
+          <button data-m="backup">全屋备电</button>
+          <button data-m="parallel">离网并联</button>
+        </div>
+        <div class="row load">
+          <span class="lbl">负载</span>
+          <button id="loadDown">−</button><output id="loadOut">62%</output><button id="loadUp">＋</button>
+        </div>
+        <label class="toggle"><span>BMS AutoSync™ 均衡</span><input type="checkbox" id="tglQuiet" checked><i></i></label>
+        <div class="runStat" id="runStat"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2><i>◆ V</i>零件档案 · PART DOSSIERS<b id="partCount"></b></h2>
+      <ol id="partList"></ol>
+    </section>
+
+    <footer>
+      拖动旋转 · 滚轮缩放 · 右键平移 · 双击零件看档案<br>
+      以 three.js 逐件手工建模 · 无外部图片素材 · 本地静态运行
+    </footer>
+  </aside>
+
+  <main id="stage">
+    <button id="panelToggle" aria-label="打开控制面板">☰</button>
+    <svg id="leaders"></svg>
+    <div id="tags"></div>
+    <div id="phaseToast"></div>
+    <div id="hint">拖动旋转 · 滚轮缩放 · 双击零件查看档案</div>
+
+    <div id="dossier" class="hidden">
+      <header>
+        <span class="num" id="dNum"></span>
+        <div class="t"><b id="dTitle"></b><i id="dEn"></i></div>
+        <button id="dClose">×</button>
+      </header>
+      <p id="dBlurb"></p>
+      <div id="dSpec" class="chips"></div>
+      <div class="dNav">
+        <button id="dPrev">‹ 上一件</button>
+        <span id="dIdx"></span>
+        <button id="dNext">下一件 ›</button>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

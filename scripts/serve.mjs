@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const sites = ['air-condition', 'oled-tv', 'wn5-console', 'domino-pitch'];
+const sites = ['air-condition', 'oled-tv', 'wn5-console', 'domino-pitch', 'inverter'];
 const requestedSite = process.argv[2];
 const requestedPort = Number(process.argv[3]);
 

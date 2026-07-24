@@ -1,0 +1,46 @@
+[
+  {
+    "viewport": "desktop",
+    "file": "E:/aicode/foursites/inverter-preview-desktop.png",
+    "errors": [],
+    "title": "WATTSONIC WattMatic AIO Home · 装配与爆炸图 | Teardown",
+    "canvasCss": {
+      "width": 1019,
+      "height": 900
+    },
+    "sampleUniqueColors": 1,
+    "brightSamples": 0,
+    "panelLeft": 0,
+    "panelWidth": 346,
+    "toggleVisible": false,
+    "toggleRect": {
+      "left": 0,
+      "top": 0,
+      "width": 0,
+      "height": 0
+    },
+    "bodyLength": 1100
+  },
+  {
+    "viewport": "mobile",
+    "file": "E:/aicode/foursites/inverter-preview-mobile.png",
+    "errors": [],
+    "title": "WATTSONIC WattMatic AIO Home · 装配与爆炸图 | Teardown",
+    "canvasCss": {
+      "width": 390,
+      "height": 844
+    },
+    "sampleUniqueColors": 1,
+    "brightSamples": 0,
+    "panelLeft": -346,
+    "panelWidth": 346,
+    "toggleVisible": true,
+    "toggleRect": {
+      "left": 12,
+      "top": 12,
+      "width": 38,
+      "height": 38
+    },
+    "bodyLength": 1102
+  }
+]

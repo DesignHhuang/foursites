@@ -9,8 +9,19 @@ const sites = [
   { slug: 'air-condition', port: 4173, title: '北极风' },
   { slug: 'oled-tv', port: 4174, title: '极夜' },
   { slug: 'wn5-console', port: 4175, title: '白夜五号' },
-  { slug: 'domino-pitch', port: 4176, title: '多米诺球场' }
+  { slug: 'domino-pitch', port: 4176, title: '多米诺球场' },
+  { slug: 'inverter', port: 4177, title: 'WATTSONIC' }
 ];
+const requestedSlugs = process.argv.slice(2);
+const selectedSites = requestedSlugs.length
+  ? sites.filter((site) => requestedSlugs.includes(site.slug))
+  : sites;
+
+if (requestedSlugs.length && selectedSites.length !== requestedSlugs.length) {
+  const known = sites.map((site) => site.slug).join(', ');
+  console.error(`Unknown site. Use one of: ${known}`);
+  process.exit(1);
+}
 
 function requireFromCandidates(name) {
   try {
@@ -50,7 +61,11 @@ function waitForServer(port) {
   });
 }
 
-const server = spawn(process.execPath, ['scripts/serve.mjs'], {
+const serveArgs = selectedSites.length === 1
+  ? ['scripts/serve.mjs', selectedSites[0].slug, String(selectedSites[0].port)]
+  : ['scripts/serve.mjs'];
+
+const server = spawn(process.execPath, serveArgs, {
   cwd: rootDir,
   stdio: ['ignore', 'pipe', 'pipe']
 });
@@ -60,7 +75,7 @@ server.stdout.on('data', (chunk) => logs.push(chunk.toString()));
 server.stderr.on('data', (chunk) => logs.push(chunk.toString()));
 
 try {
-  await Promise.all(sites.map((site) => waitForServer(site.port)));
+  await Promise.all(selectedSites.map((site) => waitForServer(site.port)));
 
   const { chromium } = requireFromCandidates('playwright-core');
   const chromeCandidates = [
@@ -73,7 +88,7 @@ try {
   const browser = await chromium.launch({ headless: true, executablePath });
 
   try {
-    for (const site of sites) {
+    for (const site of selectedSites) {
       const page = await browser.newPage();
       const errors = [];
       page.on('pageerror', (error) => errors.push(error.message));
